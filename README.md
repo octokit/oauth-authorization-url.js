@@ -219,7 +219,7 @@ location.href = myLogin().url
       <td>
         The authorization URL
       </td>
-    <tr>
+    </tr>
   </tbody>
 </table>
 
