@@ -11,7 +11,10 @@ See [GitHub’s Developer Guide for the OAuth web application flow](https://deve
 ## Usage
 
 ```js
-const { url } = octokitOauthLogin({
+const login = require('@octokit/oauth-login-url').default
+
+// get login URL
+const { url } = login({
   clientId: '1234567890abcdef1234'
 })
 
@@ -29,7 +32,7 @@ const {
   login,
   scopes,
   state
-} = octokitOauthLogin({
+} = login({
   clientId: '1234567890abcdef1234',
   redirectUri: 'https://example.com',
   login: 'octocat',
@@ -46,7 +49,7 @@ const {
 Override or set default options
 
 ```js
-const myLogin = octokitOauthLogin.defaults({
+const myLogin = login.defaults({
   baseUrl: 'https://github.my-enterprise.com',
   defaultRedirectUri: 'https://app.my-enterprise.com',
   client: '1234567890abcdef1234'
@@ -147,7 +150,7 @@ location.href = myLogin().url
 
 ## Result
 
-`octokitOauthLogin()` returns an object with the following properties
+`login()` returns an object with the following properties
 
 <table>
   <thead align=left>
