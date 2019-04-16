@@ -1,5 +1,3 @@
-# 🚧 THIS LIBRARY IS WORK IN PROGRESS
-
 # oauth-login.js
 
 > Universal library to retrieve GitHub’s identity URL for the OAuth web flow
