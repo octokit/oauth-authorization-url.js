@@ -1,6 +1,10 @@
-# oauth-login.js
+# oauth-login-url.js
 
 > Universal library to retrieve GitHub’s identity URL for the OAuth web flow
+
+[![@latest](https://img.shields.io/npm/v/@octokit/oauth-login-url.svg)](https://www.npmjs.com/package/@octokit/oauth-login-url)
+[![Build Status](https://travis-ci.com/octokit/oauth-login-url.js.svg?branch=master)](https://travis-ci.com/octokit/oauth-login-url.js)
+[![Greenkeeper](https://badges.greenkeeper.io/octokit/oauth-login-url.js.svg)](https://greenkeeper.io/)
 
 See [GitHub’s Developer Guide for the OAuth web application flow](https://developer.github.com/enterprise/2.16/apps/building-oauth-apps/authorizing-oauth-apps/#1-request-a-users-github-identity).
 
