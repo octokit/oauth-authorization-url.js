@@ -1,29 +1,35 @@
 {
-  "name": "@octokit/oauth-login.js",
+  "name": "@octokit/oauth-login-url.js",
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Universal library to retrieve GitHub’s identity URL for the OAuth web flow",
   "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest --coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/octokit/oauth-login.js.git"
-  },
-  "keywords": [],
-  "author": "",
+  "repository": "https://github.com/octokit/oauth-login-url.js",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "octokit",
+    "github",
+    "oauth"
+  ],
+  "author": "Gregor Martynus (https://github.com/gr2m)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/octokit/oauth-login.js/issues"
+    "url": "https://github.com/octokit/oauth-login-url.js/issues"
   },
-  "homepage": "https://github.com/octokit/oauth-login.js#readme",
+  "homepage": "https://github.com/octokit/oauth-login-url.js#readme",
   "devDependencies": {
     "@types/jest": "^24.0.11",
     "jest": "^24.7.1",
+    "semantic-release": "^15.13.12",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.3"
   },
