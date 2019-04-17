@@ -1,4 +1,4 @@
-import login from '../src/index'
+import { oauthLoginUrl } from '../src/index'
 
 beforeAll(() => {
   Math.random = jest.fn(() => 0.123)
@@ -8,8 +8,8 @@ beforeAll(() => {
 //   Math.random.mockRestore()
 // });
 
-test('login({clientId: "1234567890abcdef1234"})', () => {
-  expect(login({
+test('oauthLoginUrl({clientId: "1234567890abcdef1234"})', () => {
+  expect(oauthLoginUrl({
     clientId: '1234567890abcdef1234'
   })).toEqual({
     allowSignup: true,
@@ -22,8 +22,8 @@ test('login({clientId: "1234567890abcdef1234"})', () => {
   })
 })
 
-test('login({clientId: "4321fedcba0987654321"})', () => {
-  expect(login({
+test('oauthLoginUrl({clientId: "4321fedcba0987654321"})', () => {
+  expect(oauthLoginUrl({
     clientId: '4321fedcba0987654321'
   })).toEqual({
     allowSignup: true,
@@ -37,7 +37,7 @@ test('login({clientId: "4321fedcba0987654321"})', () => {
 })
 
 test('redirectUrl option', () => {
-  expect(login({
+  expect(oauthLoginUrl({
     clientId: '1234567890abcdef1234',
     redirectUrl: 'https://example.com'
   })).toEqual({
@@ -52,7 +52,7 @@ test('redirectUrl option', () => {
 })
 
 test('login option', () => {
-  expect(login({
+  expect(oauthLoginUrl({
     clientId: '1234567890abcdef1234',
     login: 'octocat'
   })).toEqual({
@@ -67,7 +67,7 @@ test('login option', () => {
 })
 
 test('scopes = []', () => {
-  expect(login({
+  expect(oauthLoginUrl({
     clientId: '1234567890abcdef1234',
     login: 'octocat',
     scopes: []
@@ -83,7 +83,7 @@ test('scopes = []', () => {
 })
 
 test('scopes = ""', () => {
-  expect(login({
+  expect(oauthLoginUrl({
     clientId: '1234567890abcdef1234',
     login: 'octocat',
     scopes: ''
@@ -99,7 +99,7 @@ test('scopes = ""', () => {
 })
 
 test('scopes = "user,public_repo, gist notifications"', () => {
-  expect(login({
+  expect(oauthLoginUrl({
     clientId: '1234567890abcdef1234',
     login: 'octocat',
     scopes: 'user,public_repo, gist notifications'
@@ -115,7 +115,7 @@ test('scopes = "user,public_repo, gist notifications"', () => {
 })
 
 test('allowSignup = false', () => {
-  expect(login({
+  expect(oauthLoginUrl({
     allowSignup: false,
     clientId: '1234567890abcdef1234',
     login: 'octocat',
