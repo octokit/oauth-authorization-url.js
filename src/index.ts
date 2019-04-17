@@ -1,4 +1,4 @@
-declare interface Options {
+interface Options {
   clientId: string
 
   allowSignup?: boolean
@@ -19,7 +19,7 @@ export interface Result {
 
 const BASE_URL = 'https://github.com/login/oauth/authorize'
 
-export default function login (options: Options): Result {
+export function oauthLoginUrl (options: Options): Result {
   const scopesNormalized = typeof options.scopes === 'string'
     ? options.scopes.split(/[,\s]+/).filter(Boolean)
     : Array.isArray(options.scopes) ? options.scopes : []
