@@ -1,14 +1,15 @@
 {
-    "compilerOptions": {
-        "allowJs": false,
-        "module": "commonjs",
-        "outDir": "./lib",
-        "pretty": true,
-        "sourceMap": true,
-        "strict": true,
-        "target": "es2015"
-    },
-    "include": [
-        "src/**/*"
-    ]
+  "compilerOptions": {
+    "allowJs": false,
+    "module": "commonjs",
+    "outDir": "./lib",
+    "pretty": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2015",
+    "declaration": true 
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
