@@ -130,3 +130,19 @@ test('allowSignup = false', () => {
     url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
   })
 })
+
+test('state = Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI', () => {
+  expect(oauthLoginUrl({
+    clientId: '1234567890abcdef1234',
+    login: 'octocat',
+    state: 'Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI'
+  })).toEqual({
+    allowSignup: false,
+    clientId: '1234567890abcdef1234',
+    login: 'octocat',
+    redirectUrl: null,
+    scopes: [],
+    state: 'Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI',
+    url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
+  })
+})
