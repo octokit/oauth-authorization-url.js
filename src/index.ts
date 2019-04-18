@@ -5,6 +5,10 @@ interface Options {
   login?: string
   scopes?: string | string[]
   redirectUrl?: string
+  state?: string
+  log?: {
+    [key: string]: (message: string) => void
+  }
 }
 
 export interface Result {
