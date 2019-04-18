@@ -137,7 +137,7 @@ test('state = Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI', () => {
     login: 'octocat',
     state: 'Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI'
   })).toEqual({
-    allowSignup: false,
+    allowSignup: true,
     clientId: '1234567890abcdef1234',
     login: 'octocat',
     redirectUrl: null,
