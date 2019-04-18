@@ -34,7 +34,7 @@ export function oauthLoginUrl (options: Options): Result {
     login: options.login || null,
     redirectUrl: options.redirectUrl || null,
     scopes: scopesNormalized,
-    state: Math.random().toString(36).substr(2),
+    state: options.state || Math.random().toString(36).substr(2),
     url: `${BASE_URL}?client_id=${options.clientId}`
   }
 }
