@@ -1,15 +1,9 @@
 {
   "compilerOptions": {
-    "allowJs": false,
-    "module": "commonjs",
-    "outDir": "./lib",
-    "pretty": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "es2015",
-    "declaration": true 
+    "target": "es2018",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/index.ts"]
 }
