@@ -10,6 +10,24 @@ See [GitHub’s Developer Guide for the OAuth web application flow](https://deve
 
 ## Usage
 
+### Browsers
+
+```html
+<script type="module">
+  import { oauthLoginUrl } from 'https://unpkg.com/@octokit/oauth-login-url';
+
+  // get login URL
+  const { url } = oauthLoginUrl({
+    clientId: '1234567890abcdef1234'
+  })
+
+  // redirect to login page
+  location.href = url
+</script>
+```
+
+### Node
+
 ```js
 const { oauthLoginUrl } = require('@octokit/oauth-login-url')
 // or: import { oauthLoginUrl } from '@octokit/oauth-login-url'
@@ -19,11 +37,10 @@ const { url } = oauthLoginUrl({
   clientId: '1234567890abcdef1234'
 })
 
-// redirect to login page
-location.href = url
+// do something with the url :)
 ```
 
-Full usage example
+### Full usage example
 
 ```js
 const { 
