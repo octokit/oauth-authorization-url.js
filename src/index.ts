@@ -1,4 +1,4 @@
-interface Options {
+export interface Options {
   clientId: string
 
   allowSignup?: boolean
@@ -21,7 +21,7 @@ export interface Result {
   url: string
 }
 
-const BASE_URL = 'https://github.com/login/oauth/authorize'
+export const BASE_URL = 'https://github.com/login/oauth/authorize'
 
 export function oauthLoginUrl (options: Options): Result {
   const scopesNormalized = typeof options.scopes === 'string'
