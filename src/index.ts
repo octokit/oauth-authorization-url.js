@@ -28,13 +28,34 @@ export function oauthLoginUrl (options: Options): Result {
     ? options.scopes.split(/[,\s]+/).filter(Boolean)
     : Array.isArray(options.scopes) ? options.scopes : []
 
-  return {
+  const result: Result = {
     allowSignup: options.allowSignup === false ? false : true,
     clientId: options.clientId,
     login: options.login || null,
     redirectUrl: options.redirectUrl || null,
     scopes: scopesNormalized,
     state: options.state || Math.random().toString(36).substr(2),
-    url: `${BASE_URL}?client_id=${options.clientId}`
+    url: ''
   }
+  result.url = urlBuilderAuthorize(BASE_URL, result)
+
+  return result
+}
+type ResultKeys = Exclude<keyof Result, 'url'>
+function urlBuilderAuthorize (base: string, options: Result) {
+  const nonNullKeys = Object.keys(options).filter(e => options[e as keyof Result] !== null)
+  const map = {
+    allowSignup: 'allow_signup',
+    clientId: 'client_id',
+    login: 'login',
+    redirectUrl: 'redirect_url',
+    scopes: 'scopes',
+    state: 'state',
+  }
+  let url = `${base}`
+  nonNullKeys.forEach((value, index) => {
+    url += index === 0 ? '?' : '&'
+    url += `${map[value as ResultKeys]}=${options[value as ResultKeys]}`
+  })
+  return url
 }
