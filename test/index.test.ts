@@ -18,7 +18,7 @@ test('oauthLoginUrl({clientId: "1234567890abcdef1234"})', () => {
     redirectUrl: null,
     scopes: [],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&state=4feornbt361'
   })
 })
 
@@ -32,7 +32,7 @@ test('oauthLoginUrl({clientId: "4321fedcba0987654321"})', () => {
     redirectUrl: null,
     scopes: [],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?client_id=4321fedcba0987654321'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=4321fedcba0987654321&state=4feornbt361'
   })
 })
 
@@ -47,7 +47,7 @@ test('redirectUrl option', () => {
     redirectUrl: 'https://example.com',
     scopes: [],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&redirect_url=https://example.com&state=4feornbt361'
   })
 })
 
@@ -62,7 +62,7 @@ test('login option', () => {
     redirectUrl: null,
     scopes: [],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=4feornbt361'
   })
 })
 
@@ -78,7 +78,7 @@ test('scopes = []', () => {
     redirectUrl: null,
     scopes: [],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=4feornbt361'
   })
 })
 
@@ -94,7 +94,7 @@ test('scopes = ""', () => {
     redirectUrl: null,
     scopes: [],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=4feornbt361'
   })
 })
 
@@ -110,7 +110,7 @@ test('scopes = "user,public_repo, gist notifications"', () => {
     redirectUrl: null,
     scopes: ['user', 'public_repo', 'gist', 'notifications'],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&scopes=user,public_repo,gist,notifications&state=4feornbt361'
   })
 })
 
@@ -127,7 +127,7 @@ test('allowSignup = false', () => {
     redirectUrl: null,
     scopes: ['user', 'public_repo', 'gist', 'notifications'],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=false&client_id=1234567890abcdef1234&login=octocat&scopes=user,public_repo,gist,notifications&state=4feornbt361'
   })
 })
 
@@ -143,6 +143,6 @@ test('state = Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI', () => {
     redirectUrl: null,
     scopes: [],
     state: 'Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI',
-    url: 'https://github.com/login/oauth/authorize?client_id=1234567890abcdef1234'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI'
   })
 })
