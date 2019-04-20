@@ -43,7 +43,6 @@ export function oauthLoginUrl (options: Options): Result {
 }
 type ResultKeys = Exclude<keyof Result, 'url'>
 function urlBuilderAuthorize (base: string, options: Result) {
-  const nonNullKeys = Object.keys(options).filter(e => options[e as keyof Result] !== null)
   const map = {
     allowSignup: 'allow_signup',
     clientId: 'client_id',
@@ -52,10 +51,15 @@ function urlBuilderAuthorize (base: string, options: Result) {
     scopes: 'scopes',
     state: 'state',
   }
-  let url = `${base}`
-  nonNullKeys.forEach((value, index) => {
-    url += index === 0 ? '?' : '&'
-    url += `${map[value as ResultKeys]}=${options[value as ResultKeys]}`
-  })
+
+  let url = base
+
+  Object.entries(options).filter(([k, v]) => v !== null && k !== 'url') // Filter out keys that are null and remove the url key
+    .filter(([, v]) => Array.isArray(v) ? v.length !== 0 : true) // Filter out empty Array
+    .map(([key, ]) => [ map[key as ResultKeys], `${options[key as ResultKeys]!}` ]) // Map Array with the proper URL parameter names and change the value to a string using template strings
+    .forEach(([key, value], index) => { // Finally, build the URL
+      url += index === 0 ? `?` : '&'
+      url += `${key}=${value}`
+    })
   return url
 }
