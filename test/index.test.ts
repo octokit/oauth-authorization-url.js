@@ -110,7 +110,7 @@ test('scopes = "user,public_repo, gist notifications"', () => {
     redirectUrl: null,
     scopes: ['user', 'public_repo', 'gist', 'notifications'],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&scopes=user,public_repo,gist,notifications&state=4feornbt361'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&scope=user,public_repo,gist,notifications&state=4feornbt361'
   })
 })
 
@@ -127,7 +127,7 @@ test('allowSignup = false', () => {
     redirectUrl: null,
     scopes: ['user', 'public_repo', 'gist', 'notifications'],
     state: '4feornbt361',
-    url: 'https://github.com/login/oauth/authorize?allow_signup=false&client_id=1234567890abcdef1234&login=octocat&scopes=user,public_repo,gist,notifications&state=4feornbt361'
+    url: 'https://github.com/login/oauth/authorize?allow_signup=false&client_id=1234567890abcdef1234&login=octocat&scope=user,public_repo,gist,notifications&state=4feornbt361'
   })
 })
 

@@ -48,7 +48,7 @@ function urlBuilderAuthorize (base: string, options: Result) {
     clientId: 'client_id',
     login: 'login',
     redirectUrl: 'redirect_url',
-    scopes: 'scopes',
+    scopes: 'scope',
     state: 'state',
   }
 
