@@ -1,25 +1,4 @@
-export interface Options {
-  clientId: string
-
-  allowSignup?: boolean
-  login?: string
-  scopes?: string | string[]
-  redirectUrl?: string
-  state?: string
-  log?: {
-    [key: string]: (message: string) => void
-  }
-}
-
-export interface Result {
-  allowSignup: boolean,
-  clientId: string,
-  login: string | null,
-  redirectUrl: string | null,
-  scopes: string[],
-  state: string,
-  url: string
-}
+import { Options, Result, ResultKeys } from './types'
 
 export const BASE_URL = 'https://github.com/login/oauth/authorize'
 
@@ -41,7 +20,7 @@ export function oauthLoginUrl (options: Options): Result {
 
   return result
 }
-type ResultKeys = Exclude<keyof Result, 'url'>
+
 function urlBuilderAuthorize (base: string, options: Result) {
   const map = {
     allowSignup: 'allow_signup',
