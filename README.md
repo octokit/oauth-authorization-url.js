@@ -10,37 +10,34 @@ See [GitHub’s Developer Guide for the OAuth web application flow](https://deve
 
 ## Usage
 
-### Browsers
+<table>
+<tbody valign=top align=left>
+<tr><th>
+Browsers
+</th><td width=100%>
+Load `@octokit/oauth-login-url` directly from [cdn.pika.dev](https://cdn.pika.dev)
 
 ```html
 <script type="module">
-  import { oauthLoginUrl } from 'https://unpkg.com/@octokit/oauth-login-url';
-
-  // get login URL
-  const { url } = oauthLoginUrl({
-    clientId: '1234567890abcdef1234'
-  })
-
-  // redirect to login page
-  location.href = url
+  import { oauthLoginUrl } from "https://cdn.pika.dev/@octokit/oauth-login-url";
 </script>
 ```
 
-### Node
+</td></tr>
+<tr><th>
+Node
+</th><td>
+
+Install with <code>npm install @octokit/oauth-login-url</code>
 
 ```js
-const { oauthLoginUrl } = require('@octokit/oauth-login-url')
-// or: import { oauthLoginUrl } from '@octokit/oauth-login-url'
-
-// get login URL
-const { url } = oauthLoginUrl({
-  clientId: '1234567890abcdef1234'
-})
-
-// do something with the url :)
+const { oauthLoginUrl } = require("@octokit/oauth-login-url");
+// or: import { oauthLoginUrl } from "@octokit/oauth-login-url";
 ```
 
-### Full usage example
+</td></tr>
+</tbody>
+</table>
 
 ```js
 const { 
