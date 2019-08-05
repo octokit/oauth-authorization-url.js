@@ -6,7 +6,7 @@
   "version": "0.0.0-development",
   "description": "Universal library to retrieve GitHub’s identity URL for the OAuth web flow",
   "scripts": {
-    "build": "pack build",
+    "build": "pika build",
     "test": "jest --coverage"
   },
   "repository": "https://github.com/octokit/oauth-login-url.js",
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/octokit/oauth-login-url.js#readme",
   "devDependencies": {
-    "@pika/pack": "^0.4.0",
+    "@pika/pack": "^0.5.0",
     "@pika/plugin-build-node": "^0.6.0",
     "@pika/plugin-build-web": "^0.6.0",
     "@pika/plugin-ts-standard-pkg": "^0.6.0",
