@@ -33,7 +33,7 @@
     "jest": "^24.7.1",
     "pika-plugin-unpkg-field": "^1.0.1",
     "semantic-release": "^17.0.0",
-    "ts-jest": "^24.0.2",
+    "ts-jest": "^25.1.0",
     "typescript": "^3.4.3"
   },
   "jest": {
