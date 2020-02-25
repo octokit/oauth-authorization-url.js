@@ -11,10 +11,13 @@ See [GitHub’s Developer Guide for the OAuth web application flow](https://deve
 ## Usage
 
 <table>
-<tbody valign=top align=left>
-<tr><th>
-Browsers
-</th><td width=100%>
+  <tbody valign=top align=left>
+    <tr>
+      <th>
+        Browsers
+      </th>
+      <td width=100%>
+  
 Load `@octokit/oauth-login-url` directly from [cdn.pika.dev](https://cdn.pika.dev)
 
 ```html
@@ -24,9 +27,11 @@ Load `@octokit/oauth-login-url` directly from [cdn.pika.dev](https://cdn.pika.de
 ```
 
 </td></tr>
-<tr><th>
-Node
-</th><td>
+    <tr>
+      <th>
+        Node
+      </th>
+      <td>
 
 Install with <code>npm install @octokit/oauth-login-url</code>
 
