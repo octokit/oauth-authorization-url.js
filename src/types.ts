@@ -1,24 +1,21 @@
 export interface Options {
-  clientId: string
+  clientId: string;
 
-  allowSignup?: boolean
-  login?: string
-  scopes?: string | string[]
-  redirectUrl?: string
-  state?: string
-  log?: {
-    [key: string]: (message: string) => void
-  }
+  allowSignup?: boolean;
+  login?: string;
+  scopes?: string | string[];
+  redirectUrl?: string;
+  state?: string;
 }
 
 export interface Result {
-  allowSignup: boolean,
-  clientId: string,
-  login: string | null,
-  redirectUrl: string | null,
-  scopes: string[],
-  state: string,
-  url: string
+  allowSignup: boolean;
+  clientId: string;
+  login: string | null;
+  redirectUrl: string | null;
+  scopes: string[];
+  state: string;
+  url: string;
 }
 
-export type ResultKeys = Exclude<keyof Result, 'url'>
+export type ResultKeys = Exclude<keyof Result, "url">;

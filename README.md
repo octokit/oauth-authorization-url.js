@@ -22,7 +22,7 @@ Load `@octokit/oauth-authorization-url` directly from [cdn.pika.dev](https://cdn
 
 ```html
 <script type="module">
-  import { oauthLoginUrl } from "https://cdn.pika.dev/@octokit/oauth-authorization-url";
+  import { oauthAuthorizationUrl } from "https://cdn.pika.dev/@octokit/oauth-authorization-url";
 </script>
 ```
 
@@ -36,8 +36,8 @@ Load `@octokit/oauth-authorization-url` directly from [cdn.pika.dev](https://cdn
 Install with <code>npm install @octokit/oauth-authorization-url</code>
 
 ```js
-const { oauthLoginUrl } = require("@octokit/oauth-authorization-url");
-// or: import { oauthLoginUrl } from "@octokit/oauth-authorization-url";
+const { oauthAuthorizationUrl } = require("@octokit/oauth-authorization-url");
+// or: import { oauthAuthorizationUrl } from "@octokit/oauth-authorization-url";
 ```
 
 </td></tr>
@@ -45,30 +45,20 @@ const { oauthLoginUrl } = require("@octokit/oauth-authorization-url");
 </table>
 
 ```js
-const { url, clientId, redirectUri, login, scopes, state } = oauthLoginUrl({
+const {
+  url,
+  clientId,
+  redirectUrl,
+  login,
+  scopes,
+  state
+} = oauthAuthorizationUrl({
   clientId: "1234567890abcdef1234",
-  redirectUri: "https://example.com",
+  redirectUrl: "https://example.com",
   login: "octocat",
   scopes: ["repo", "admin:org"],
-  state: "secret123",
-  log: {
-    warn(message) {
-      myLogger.log(message, { level: "warn" });
-    }
-  }
+  state: "secret123"
 });
-```
-
-Override or set default options
-
-```js
-const myLogin = login.defaults({
-  baseUrl: "https://github.my-enterprise.com",
-  defaultRedirectUri: "https://app.my-enterprise.com",
-  client: "1234567890abcdef1234"
-});
-
-location.href = oauthLoginUrl().url;
 ```
 
 ## Options
@@ -95,7 +85,7 @@ location.href = oauthLoginUrl().url;
     </tr>
     <tr>
       <th>
-        <code>redirectUri</code>
+        <code>redirectUrl</code>
       </th>
       <td>
         The URL in your application where users will be sent after authorization. See <a href="https://developer.github.com/enterprise/2.16/apps/building-oauth-apps/authorizing-oauth-apps/#redirect-urls">Redirect URLs</a> in GitHub’s Developer Guide.
@@ -136,26 +126,10 @@ location.href = oauthLoginUrl().url;
     </tr>
     <tr>
       <th>
-        <code>log</code>
-      </th>
-      <td>
-        When invalid options are passed, warnings are logged using <code>log.warn(message)</code>. Defaults to <a href="https://developer.mozilla.org/en-US/docs/Web/API/console"><code>console</code></a>.
-      </td>
-    </tr>
-    <tr>
-      <th>
         <code>baseUrl</code>
       </th>
       <td>
         When using GitHub Enterprise Server, set the baseUrl to the origin, e.g. <code>https://github.my-enterprise.com/</code>.
-      </td>
-    </tr>
-    <tr>
-      <th>
-        <code>defaultRedirectUri</code>
-      </th>
-      <td>
-        Set to the redirect URL as defined in your OAuth app. When a <code>redirectUri</code> is passed which does not include <code>defaultRedirectUri</code>, an error is thrown.
       </td>
     </tr>
   </tbody>
@@ -163,7 +137,7 @@ location.href = oauthLoginUrl().url;
 
 ## Result
 
-`oauthLoginUrl()` returns an object with the following properties
+`oauthAuthorizationUrl()` returns an object with the following properties
 
 <table>
   <thead align=left>
@@ -203,10 +177,10 @@ location.href = oauthLoginUrl().url;
     </tr>
     <tr>
       <th>
-        <code>redirectUri</code>
+        <code>redirectUrl</code>
       </th>
       <td>
-        Returns <code>options.redirectUri</code> if it was set. Defaults to <code>options.defaultRedirectUri</code> if it was set, otherwise <code>null</code>.
+        Returns <code>options.redirectUrl</code> if it was set. Defaults to <code>null</code>.
       </td>
     </tr>
     <tr>
