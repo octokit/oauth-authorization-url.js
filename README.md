@@ -1,10 +1,10 @@
-# oauth-login-url.js
+# oauth-authorization-url.js
 
 > Universal library to retrieve GitHub’s identity URL for the OAuth web flow
 
-[![@latest](https://img.shields.io/npm/v/@octokit/oauth-login-url.svg)](https://www.npmjs.com/package/@octokit/oauth-login-url)
-[![Build Status](https://travis-ci.com/octokit/oauth-login-url.js.svg?branch=master)](https://travis-ci.com/octokit/oauth-login-url.js)
-[![Greenkeeper](https://badges.greenkeeper.io/octokit/oauth-login-url.js.svg)](https://greenkeeper.io/)
+[![@latest](https://img.shields.io/npm/v/@octokit/oauth-authorization-url.svg)](https://www.npmjs.com/package/@octokit/oauth-authorization-url)
+[![Build Status](https://travis-ci.com/octokit/oauth-authorization-url.js.svg?branch=master)](https://travis-ci.com/octokit/oauth-authorization-url.js)
+[![Greenkeeper](https://badges.greenkeeper.io/octokit/oauth-authorization-url.js.svg)](https://greenkeeper.io/)
 
 See [GitHub’s Developer Guide for the OAuth web application flow](https://developer.github.com/enterprise/2.16/apps/building-oauth-apps/authorizing-oauth-apps/#1-request-a-users-github-identity).
 
@@ -18,11 +18,11 @@ See [GitHub’s Developer Guide for the OAuth web application flow](https://deve
       </th>
       <td width=100%>
   
-Load `@octokit/oauth-login-url` directly from [cdn.pika.dev](https://cdn.pika.dev)
+Load `@octokit/oauth-authorization-url` directly from [cdn.pika.dev](https://cdn.pika.dev)
 
 ```html
 <script type="module">
-  import { oauthLoginUrl } from "https://cdn.pika.dev/@octokit/oauth-login-url";
+  import { oauthLoginUrl } from "https://cdn.pika.dev/@octokit/oauth-authorization-url";
 </script>
 ```
 
@@ -33,11 +33,11 @@ Load `@octokit/oauth-login-url` directly from [cdn.pika.dev](https://cdn.pika.de
       </th>
       <td>
 
-Install with <code>npm install @octokit/oauth-login-url</code>
+Install with <code>npm install @octokit/oauth-authorization-url</code>
 
 ```js
-const { oauthLoginUrl } = require("@octokit/oauth-login-url");
-// or: import { oauthLoginUrl } from "@octokit/oauth-login-url";
+const { oauthLoginUrl } = require("@octokit/oauth-authorization-url");
+// or: import { oauthLoginUrl } from "@octokit/oauth-authorization-url";
 ```
 
 </td></tr>
@@ -45,37 +45,30 @@ const { oauthLoginUrl } = require("@octokit/oauth-login-url");
 </table>
 
 ```js
-const { 
-  url,
-  clientId,
-  redirectUri,  
-  login,
-  scopes,
-  state
-} = oauthLoginUrl({
-  clientId: '1234567890abcdef1234',
-  redirectUri: 'https://example.com',
-  login: 'octocat',
-  scopes: ['repo', 'admin:org'],
-  state: 'secret123',
+const { url, clientId, redirectUri, login, scopes, state } = oauthLoginUrl({
+  clientId: "1234567890abcdef1234",
+  redirectUri: "https://example.com",
+  login: "octocat",
+  scopes: ["repo", "admin:org"],
+  state: "secret123",
   log: {
-    warn (message) {
-      myLogger.log(message, { level: 'warn' })
+    warn(message) {
+      myLogger.log(message, { level: "warn" });
     }
   }
-})
+});
 ```
 
 Override or set default options
 
 ```js
 const myLogin = login.defaults({
-  baseUrl: 'https://github.my-enterprise.com',
-  defaultRedirectUri: 'https://app.my-enterprise.com',
-  client: '1234567890abcdef1234'
-})
+  baseUrl: "https://github.my-enterprise.com",
+  defaultRedirectUri: "https://app.my-enterprise.com",
+  client: "1234567890abcdef1234"
+});
 
-location.href = oauthLoginUrl().url
+location.href = oauthLoginUrl().url;
 ```
 
 ## Options
