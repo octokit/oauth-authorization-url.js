@@ -33,7 +33,7 @@ function urlBuilderAuthorize(base: string, options: Result) {
     allowSignup: "allow_signup",
     clientId: "client_id",
     login: "login",
-    redirectUrl: "redirect_url",
+    redirectUrl: "redirect_uri",
     scopes: "scope",
     state: "state"
   };
