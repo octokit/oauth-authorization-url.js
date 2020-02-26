@@ -56,7 +56,7 @@ test("redirectUrl option", () => {
     scopes: [],
     state: "4feornbt361",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&redirect_url=https://example.com&state=4feornbt361"
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&redirect_uri=https://example.com&state=4feornbt361"
   });
 });
 
