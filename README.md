@@ -4,7 +4,7 @@
 
 [![@latest](https://img.shields.io/npm/v/@octokit/oauth-authorization-url.svg)](https://www.npmjs.com/package/@octokit/oauth-authorization-url)
 [![Build Status](https://travis-ci.com/octokit/oauth-authorization-url.js.svg?branch=master)](https://travis-ci.com/octokit/oauth-authorization-url.js)
-[![Greenkeeper](https://badges.greenkeeper.io/octokit/oauth-authorization-url.js.svg)](https://greenkeeper.io/)
+
 
 See [GitHub’s Developer Guide for the OAuth web application flow](https://developer.github.com/enterprise/2.16/apps/building-oauth-apps/authorizing-oauth-apps/#1-request-a-users-github-identity).
 
