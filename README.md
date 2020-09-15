@@ -128,7 +128,7 @@ const {
         <code>baseUrl</code>
       </th>
       <td>
-        When using GitHub Enterprise Server, set the baseUrl to the origin, e.g. <code>https://github.my-enterprise.com/</code>.
+        When using GitHub Enterprise Server, set the baseUrl to the origin, e.g. <code>https://github.my-enterprise.com</code>.
       </td>
     </tr>
   </tbody>
