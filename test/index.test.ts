@@ -4,14 +4,10 @@ beforeAll(() => {
   Math.random = jest.fn(() => 0.123);
 });
 
-// afterAll(() => {
-//   Math.random.mockRestore()
-// });
-
 test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234"})', () => {
   expect(
     oauthAuthorizationUrl({
-      clientId: "1234567890abcdef1234"
+      clientId: "1234567890abcdef1234",
     })
   ).toEqual({
     allowSignup: true,
@@ -21,14 +17,14 @@ test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234"})', () => {
     scopes: [],
     state: "4feornbt361",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&state=4feornbt361"
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&state=4feornbt361",
   });
 });
 
 test('oauthAuthorizationUrl({clientId: "4321fedcba0987654321"})', () => {
   expect(
     oauthAuthorizationUrl({
-      clientId: "4321fedcba0987654321"
+      clientId: "4321fedcba0987654321",
     })
   ).toEqual({
     allowSignup: true,
@@ -38,7 +34,7 @@ test('oauthAuthorizationUrl({clientId: "4321fedcba0987654321"})', () => {
     scopes: [],
     state: "4feornbt361",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=4321fedcba0987654321&state=4feornbt361"
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=4321fedcba0987654321&state=4feornbt361",
   });
 });
 
@@ -46,7 +42,7 @@ test("redirectUrl option", () => {
   expect(
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
-      redirectUrl: "https://example.com"
+      redirectUrl: "https://example.com",
     })
   ).toEqual({
     allowSignup: true,
@@ -56,7 +52,7 @@ test("redirectUrl option", () => {
     scopes: [],
     state: "4feornbt361",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&redirect_uri=https://example.com&state=4feornbt361"
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&redirect_uri=https://example.com&state=4feornbt361",
   });
 });
 
@@ -64,7 +60,7 @@ test("login option", () => {
   expect(
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
-      login: "octocat"
+      login: "octocat",
     })
   ).toEqual({
     allowSignup: true,
@@ -74,7 +70,7 @@ test("login option", () => {
     scopes: [],
     state: "4feornbt361",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=4feornbt361"
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=4feornbt361",
   });
 });
 
@@ -83,7 +79,7 @@ test("scopes = []", () => {
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
       login: "octocat",
-      scopes: []
+      scopes: [],
     })
   ).toEqual({
     allowSignup: true,
@@ -93,7 +89,7 @@ test("scopes = []", () => {
     scopes: [],
     state: "4feornbt361",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=4feornbt361"
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=4feornbt361",
   });
 });
 
@@ -102,7 +98,7 @@ test('scopes = ""', () => {
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
       login: "octocat",
-      scopes: ""
+      scopes: "",
     })
   ).toEqual({
     allowSignup: true,
@@ -112,7 +108,7 @@ test('scopes = ""', () => {
     scopes: [],
     state: "4feornbt361",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=4feornbt361"
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=4feornbt361",
   });
 });
 
@@ -121,7 +117,7 @@ test('scopes = "user,public_repo, gist notifications"', () => {
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
       login: "octocat",
-      scopes: "user,public_repo, gist notifications"
+      scopes: "user,public_repo, gist notifications",
     })
   ).toEqual({
     allowSignup: true,
@@ -131,7 +127,7 @@ test('scopes = "user,public_repo, gist notifications"', () => {
     scopes: ["user", "public_repo", "gist", "notifications"],
     state: "4feornbt361",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&scope=user,public_repo,gist,notifications&state=4feornbt361"
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&scope=user,public_repo,gist,notifications&state=4feornbt361",
   });
 });
 
@@ -141,7 +137,7 @@ test("allowSignup = false", () => {
       allowSignup: false,
       clientId: "1234567890abcdef1234",
       login: "octocat",
-      scopes: "user,public_repo, gist notifications"
+      scopes: "user,public_repo, gist notifications",
     })
   ).toEqual({
     allowSignup: false,
@@ -151,7 +147,7 @@ test("allowSignup = false", () => {
     scopes: ["user", "public_repo", "gist", "notifications"],
     state: "4feornbt361",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=false&client_id=1234567890abcdef1234&login=octocat&scope=user,public_repo,gist,notifications&state=4feornbt361"
+      "https://github.com/login/oauth/authorize?allow_signup=false&client_id=1234567890abcdef1234&login=octocat&scope=user,public_repo,gist,notifications&state=4feornbt361",
   });
 });
 
@@ -160,7 +156,7 @@ test("state = Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI", () => {
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
       login: "octocat",
-      state: "Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI"
+      state: "Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI",
     })
   ).toEqual({
     allowSignup: true,
@@ -170,6 +166,24 @@ test("state = Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI", () => {
     scopes: [],
     state: "Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI",
     url:
-      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI"
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&login=octocat&state=Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI",
+  });
+});
+
+test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234", baseUrl: "https://github.my-enterprise.com/"})', () => {
+  expect(
+    oauthAuthorizationUrl({
+      clientId: "1234567890abcdef1234",
+      baseUrl: "https://github.my-enterprise.com",
+    })
+  ).toEqual({
+    allowSignup: true,
+    clientId: "1234567890abcdef1234",
+    login: null,
+    redirectUrl: null,
+    scopes: [],
+    state: "4feornbt361",
+    url:
+      "https://github.my-enterprise.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&state=4feornbt361",
   });
 });
