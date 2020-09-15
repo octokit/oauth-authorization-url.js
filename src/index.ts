@@ -1,7 +1,5 @@
 import { Options, Result, ResultKeys } from "./types";
 
-export const BASE_URL = "https://github.com/login/oauth/authorize";
-
 export function oauthAuthorizationUrl(options: Options): Result {
   const scopesNormalized =
     typeof options.scopes === "string"
@@ -16,14 +14,12 @@ export function oauthAuthorizationUrl(options: Options): Result {
     login: options.login || null,
     redirectUrl: options.redirectUrl || null,
     scopes: scopesNormalized,
-    state:
-      options.state ||
-      Math.random()
-        .toString(36)
-        .substr(2),
-    url: ""
+    state: options.state || Math.random().toString(36).substr(2),
+    url: "",
   };
-  result.url = urlBuilderAuthorize(BASE_URL, result);
+
+  const baseUrl = options.baseUrl || "https://github.com";
+  result.url = urlBuilderAuthorize(`${baseUrl}/login/oauth/authorize`, result);
 
   return result;
 }
@@ -35,7 +31,7 @@ function urlBuilderAuthorize(base: string, options: Result) {
     login: "login",
     redirectUrl: "redirect_uri",
     scopes: "scope",
-    state: "state"
+    state: "state",
   };
 
   let url = base;

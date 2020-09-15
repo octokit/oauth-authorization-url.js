@@ -6,8 +6,8 @@ export interface Options {
   scopes?: string | string[];
   redirectUrl?: string;
   state?: string;
+  baseUrl?: string;
 }
-
 export interface Result {
   allowSignup: boolean;
   clientId: string;
