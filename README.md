@@ -17,11 +17,11 @@ See [GitHub’s Developer Guide for the OAuth web application flow](https://deve
       </th>
       <td width=100%>
   
-Load `@octokit/oauth-authorization-url` directly from [cdn.pika.dev](https://cdn.pika.dev)
+Load `@octokit/oauth-authorization-url` directly from [cdn.skypack.dev](https://cdn.skypack.dev)
 
 ```html
 <script type="module">
-  import { oauthAuthorizationUrl } from "https://cdn.pika.dev/@octokit/oauth-authorization-url";
+  import { oauthAuthorizationUrl } from "https://cdn.skypack.dev/@octokit/oauth-authorization-url";
 </script>
 ```
 
