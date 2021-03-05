@@ -4,12 +4,12 @@
     "access": "public"
   },
   "version": "0.0.0-development",
-  "description": "Universal library to retrieve GitHub’s identity URL for the OAuth web flow",
+  "description": "Universal library to retrieve GitHubâs identity URL for the OAuth web flow",
   "scripts": {
     "build": "pika build",
     "test": "jest --coverage"
   },
-  "repository": "https://github.com/octokit/oauth-authorization-url.js",
+  "repository": "github:octokit/oauth-authorization-url.js",
   "files": [
     "lib"
   ],
@@ -20,10 +20,6 @@
   ],
   "author": "Gregor Martynus (https://github.com/gr2m)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/octokit/oauth-authorization-url.js/issues"
-  },
-  "homepage": "https://github.com/octokit/oauth-authorization-url.js#readme",
   "devDependencies": {
     "@pika/pack": "^0.5.0",
     "@pika/plugin-build-node": "^0.9.0",
