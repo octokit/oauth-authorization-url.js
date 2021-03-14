@@ -3,9 +3,9 @@
 > Universal library to retrieve GitHub’s identity URL for the OAuth web flow
 
 [![@latest](https://img.shields.io/npm/v/@octokit/oauth-authorization-url.svg)](https://www.npmjs.com/package/@octokit/oauth-authorization-url)
-[![Build Status](https://travis-ci.com/octokit/oauth-authorization-url.js.svg?branch=master)](https://travis-ci.com/octokit/oauth-authorization-url.js)
+[![Build Status](https://github.com/octokit/oauth-authorization-url.js/workflows/Test/badge.svg)](https://github.com/octokit/oauth-authorization-url.js/actions?query=workflow%3ATest+branch%3Amaster)
 
-See [GitHub’s Developer Guide for the OAuth web application flow](https://developer.github.com/enterprise/2.16/apps/building-oauth-apps/authorizing-oauth-apps/#1-request-a-users-github-identity).
+See [GitHub’s Developer Guide for the OAuth App web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). Note that the [OAuth web application flow for GitHub Apps] is slightly different. GitHub Apps do not support scopes for its user access tokens (they are called user-to-server tokens for GitHub Apps), instead they inherit the user permissions from the GitHub App's registration and the repository/organization access and permissions from the respective installation.
 
 ## Usage
 
