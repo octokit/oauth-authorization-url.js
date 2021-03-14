@@ -54,17 +54,23 @@ function urlBuilderAuthorize(
   let url = base;
 
   Object.keys(map)
-    .filter((k) => options[k] !== null) // Filter out keys that are null and remove the url key
+    // Filter out keys that are null and remove the url key
+    .filter((k) => options[k] !== null)
+
+    // Filter out empty scopes array
     .filter((k) => {
       if (k !== "scopes") return true;
       if (options.clientType === "github-app") return false;
 
       return !Array.isArray(options[k]) || (options[k] as string[]).length > 1;
-    }) // Filter out empty scopes array
+    })
+
+    // Map Array with the proper URL parameter names and change the value to a string using template strings
     // @ts-ignore
-    .map((key) => [map[key], `${options[key]}`]) // Map Array with the proper URL parameter names and change the value to a string using template strings
+    .map((key) => [map[key], `${options[key]}`])
+
+    // Finally, build the URL
     .forEach(([key, value], index) => {
-      // Finally, build the URL
       url += index === 0 ? `?` : "&";
       url += `${key}=${value}`;
     });
