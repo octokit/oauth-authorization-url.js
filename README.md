@@ -5,7 +5,7 @@
 [![@latest](https://img.shields.io/npm/v/@octokit/oauth-authorization-url.svg)](https://www.npmjs.com/package/@octokit/oauth-authorization-url)
 [![Build Status](https://github.com/octokit/oauth-authorization-url.js/workflows/Test/badge.svg)](https://github.com/octokit/oauth-authorization-url.js/actions?query=workflow%3ATest+branch%3Amaster)
 
-See [GitHub’s Developer Guide for the OAuth App web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). Note that the [OAuth web application flow for GitHub Apps] is slightly different. GitHub Apps do not support scopes for its user access tokens (they are called user-to-server tokens for GitHub Apps), instead they inherit the user permissions from the GitHub App's registration and the repository/organization access and permissions from the respective installation.
+See [GitHub’s Developer Guide for the OAuth App web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). Note that the [OAuth web application flow for GitHub Apps](https://docs.github.com/en/developers/apps/identifying-and-authorizing-users-for-github-apps#web-application-flow) is slightly different. GitHub Apps do not support scopes for its user access tokens (they are called user-to-server tokens for GitHub Apps), instead they inherit the user permissions from the GitHub App's registration and the repository/organization access and permissions from the respective installation.
 
 ## Usage
 
