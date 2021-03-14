@@ -12,12 +12,49 @@ test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234"})', () => {
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
     login: null,
     redirectUrl: null,
     scopes: [],
     state: "4feornbt361",
     url:
       "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&state=4feornbt361",
+  });
+});
+
+test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234", clientType: "oauth-app"})', () => {
+  expect(
+    oauthAuthorizationUrl({
+      clientId: "1234567890abcdef1234",
+    })
+  ).toEqual({
+    allowSignup: true,
+    clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
+    login: null,
+    redirectUrl: null,
+    scopes: [],
+    state: "4feornbt361",
+    url:
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=1234567890abcdef1234&state=4feornbt361",
+  });
+});
+
+test('oauthAuthorizationUrl({clientId: "lv1.1234567890abcdef", clientType: "github-app"})', () => {
+  expect(
+    oauthAuthorizationUrl({
+      clientId: "lv1.1234567890abcdef",
+      clientType: "github-app",
+    })
+  ).toEqual({
+    allowSignup: true,
+    clientId: "lv1.1234567890abcdef",
+    clientType: "github-app",
+    login: null,
+    redirectUrl: null,
+    state: "4feornbt361",
+    url:
+      "https://github.com/login/oauth/authorize?allow_signup=true&client_id=lv1.1234567890abcdef&state=4feornbt361",
   });
 });
 
@@ -29,6 +66,7 @@ test('oauthAuthorizationUrl({clientId: "4321fedcba0987654321"})', () => {
   ).toEqual({
     allowSignup: true,
     clientId: "4321fedcba0987654321",
+    clientType: "oauth-app",
     login: null,
     redirectUrl: null,
     scopes: [],
@@ -47,6 +85,7 @@ test("redirectUrl option", () => {
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
     login: null,
     redirectUrl: "https://example.com",
     scopes: [],
@@ -65,6 +104,7 @@ test("login option", () => {
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
     login: "octocat",
     redirectUrl: null,
     scopes: [],
@@ -84,6 +124,7 @@ test("scopes = []", () => {
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
     login: "octocat",
     redirectUrl: null,
     scopes: [],
@@ -103,6 +144,7 @@ test('scopes = ""', () => {
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
     login: "octocat",
     redirectUrl: null,
     scopes: [],
@@ -122,6 +164,7 @@ test('scopes = "user,public_repo, gist notifications"', () => {
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
     login: "octocat",
     redirectUrl: null,
     scopes: ["user", "public_repo", "gist", "notifications"],
@@ -142,6 +185,7 @@ test("allowSignup = false", () => {
   ).toEqual({
     allowSignup: false,
     clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
     login: "octocat",
     redirectUrl: null,
     scopes: ["user", "public_repo", "gist", "notifications"],
@@ -161,6 +205,7 @@ test("state = Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI", () => {
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
     login: "octocat",
     redirectUrl: null,
     scopes: [],
@@ -179,6 +224,7 @@ test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234", baseUrl: "https:/
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
+    clientType: "oauth-app",
     login: null,
     redirectUrl: null,
     scopes: [],
