@@ -62,7 +62,7 @@ function urlBuilderAuthorize(
       if (k !== "scopes") return true;
       if (options.clientType === "github-app") return false;
 
-      return !Array.isArray(options[k]) || (options[k] as string[]).length > 1;
+      return !Array.isArray(options[k]) || (options[k] as string[]).length > 0;
     })
 
     // Map Array with the proper URL parameter names and change the value to a string using template strings
