@@ -14,6 +14,7 @@ See [GitHub’s Developer Guide for the OAuth App web application flow](https://
   - [For GitHub Apps](#for-github-apps)
 - [Options](#options)
 - [Result](#result)
+- [Types](#types)
 - [License](#license)
 
 <!-- tocstop -->
@@ -262,6 +263,16 @@ Returns an array of strings. Returns <code>options.scopes</code> if it was set a
     </tr>
   </tbody>
 </table>
+
+## Types
+
+```ts
+import { ClientType, Options, Result } from "@octokit/oauth-authorization-url";
+```
+
+- `ClientType` is a union of `"oauth-app"` and `"github-app"`
+- `Options<"oauth-app">` returns types for OAuth Apps Options. `Options<"github-app">` returns types for GitHub Apps Options.
+- `Result<"oauth-app">` returns types for OAuth Apps Result object. `Result<"github-app">` returns types for GitHub Apps Result object.
 
 ## License
 

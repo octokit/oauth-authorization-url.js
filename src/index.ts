@@ -1,4 +1,5 @@
 import { ClientType, Options, Result } from "./types";
+export { ClientType, Options, Result } from "./types";
 
 export function oauthAuthorizationUrl<
   TClientType extends ClientType = "oauth-app"
