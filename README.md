@@ -249,7 +249,7 @@ Returns an array of strings. Returns <code>options.scopes</code> if it was set a
         <code>state</code>
       </th>
       <td>
-        Returns <code>options.state</code> if it was set. Defaults to <code>Defaults to <code>Math.random().toString(36).substr(2)</code>.
+        Returns <code>options.state</code> if it was set. Defaults to Defaults to <code>Math.random().toString(36).substr(2)</code>.
       </td>
     </tr>
     <tr>
