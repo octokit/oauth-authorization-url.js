@@ -1,9 +1,9 @@
 export type ClientType = "oauth-app" | "github-app";
 
-export type OAuthAppOptions<TClientType extends "oauth-app"> = {
+export type OAuthAppOptions = {
   clientId: string;
 
-  clientType?: TClientType;
+  clientType?: "oauth-app";
   allowSignup?: boolean;
   login?: string;
   scopes?: string | string[];
@@ -12,12 +12,10 @@ export type OAuthAppOptions<TClientType extends "oauth-app"> = {
   baseUrl?: string;
 };
 
-export type GitHubAppOptions<TClientType extends "github-app"> = {
+export type GitHubAppOptions = {
   clientId: string;
 
-  clientType: TClientType;
-  /** `scopes` are not permitted for GitHub Apps */
-  scopes?: never;
+  clientType: "github-app";
   allowSignup?: boolean;
   login?: string;
   redirectUrl?: string;
@@ -25,38 +23,22 @@ export type GitHubAppOptions<TClientType extends "github-app"> = {
   baseUrl?: string;
 };
 
-export type Options<
-  TClientType extends ClientType
-> = TClientType extends "oauth-app"
-  ? OAuthAppOptions<TClientType>
-  : TClientType extends "github-app"
-  ? GitHubAppOptions<TClientType>
-  : never;
-
-type OAuthAppResult<TClientType extends "oauth-app"> = {
+export type OAuthAppResult = {
   allowSignup: boolean;
   clientId: string;
-  clientType: TClientType;
+  clientType: "oauth-app";
   login: string | null;
   redirectUrl: string | null;
   scopes: string[];
   state: string;
   url: string;
 };
-type GitHubAppResult<TClientType extends "github-app"> = {
+export type GitHubAppResult = {
   allowSignup: boolean;
   clientId: string;
-  clientType: TClientType;
+  clientType: "github-app";
   login: string | null;
   redirectUrl: string | null;
   state: string;
   url: string;
 };
-
-export type Result<
-  TClientType extends ClientType
-> = TClientType extends "oauth-app"
-  ? OAuthAppResult<TClientType>
-  : TClientType extends "github-app"
-  ? GitHubAppResult<TClientType>
-  : never;
