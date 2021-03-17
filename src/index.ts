@@ -1,19 +1,30 @@
-import { ClientType, Options, Result } from "./types";
-export { ClientType, Options, Result } from "./types";
+import {
+  ClientType,
+  OAuthAppOptions,
+  GitHubAppOptions,
+  OAuthAppResult,
+  GitHubAppResult,
+} from "./types";
+export {
+  ClientType,
+  OAuthAppOptions,
+  GitHubAppOptions,
+  OAuthAppResult,
+  GitHubAppResult,
+} from "./types";
 
-export function oauthAuthorizationUrl<
-  TClientType extends ClientType = "oauth-app"
->(options: Options<TClientType>): Result<TClientType> {
-  const scopesNormalized =
-    typeof options.scopes === "string"
-      ? options.scopes.split(/[,\s]+/).filter(Boolean)
-      : Array.isArray(options.scopes)
-      ? options.scopes
-      : [];
+export function oauthAuthorizationUrl(options: OAuthAppOptions): OAuthAppResult;
+export function oauthAuthorizationUrl(
+  options: GitHubAppOptions
+): GitHubAppResult;
 
+export function oauthAuthorizationUrl(
+  options: Record<string, unknown>
+): Record<string, unknown> {
   const clientType = options.clientType || "oauth-app";
   const baseUrl = options.baseUrl || "https://github.com";
-  const common = {
+  const result: Record<string, unknown> = {
+    clientType,
     allowSignup: options.allowSignup === false ? false : true,
     clientId: options.clientId,
     login: options.login || null,
@@ -22,21 +33,17 @@ export function oauthAuthorizationUrl<
     url: "",
   };
 
-  const result =
-    clientType === "oauth-app"
-      ? {
-          ...common,
-          clientType: "oauth-app",
-          scopes: scopesNormalized,
-        }
-      : {
-          ...common,
-          clientType: "github-app",
-        };
+  if (clientType === "oauth-app") {
+    const scopes = "scopes" in options ? options.scopes : [];
+    result.scopes =
+      typeof scopes === "string"
+        ? scopes.split(/[,\s]+/).filter(Boolean)
+        : scopes;
+  }
 
   result.url = urlBuilderAuthorize(`${baseUrl}/login/oauth/authorize`, result);
 
-  return result as Result<TClientType>;
+  return result;
 }
 
 function urlBuilderAuthorize(

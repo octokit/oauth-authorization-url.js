@@ -267,12 +267,14 @@ Returns an array of strings. Returns <code>options.scopes</code> if it was set a
 ## Types
 
 ```ts
-import { ClientType, Options, Result } from "@octokit/oauth-authorization-url";
+import {
+  ClientType,
+  OAuthAppOptions,
+  OAuthAppResult,
+  GitHubAppOptions,
+  GitHubAppResult,
+} from "@octokit/oauth-authorization-url";
 ```
-
-- `ClientType` is a union of `"oauth-app"` and `"github-app"`
-- `Options<"oauth-app">` returns types for OAuth Apps Options. `Options<"github-app">` returns types for GitHub Apps Options.
-- `Result<"oauth-app">` returns types for OAuth Apps Result object. `Result<"github-app">` returns types for GitHub Apps Result object.
 
 ## License
 
