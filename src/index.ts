@@ -80,7 +80,7 @@ function urlBuilderAuthorize(
     // Finally, build the URL
     .forEach(([key, value], index) => {
       url += index === 0 ? `?` : "&";
-      url += `${key}=${value}`;
+      url += `${key}=${encodeURIComponent(value)}`;
     });
 
   return url;
