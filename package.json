@@ -6,7 +6,7 @@
   "version": "0.0.0-development",
   "description": "Universal library to retrieve GitHubâs identity URL for the OAuth web flow",
   "scripts": {
-    "build": "pika build",
+    "build": "pika-pack build",
     "test": "jest --coverage"
   },
   "repository": "github:octokit/oauth-authorization-url.js",
