@@ -58,21 +58,15 @@ const { oauthAuthorizationUrl } = require("@octokit/oauth-authorization-url");
 ### For OAuth Apps
 
 ```js
-const {
-  url,
-  clientId,
-  redirectUrl,
-  login,
-  scopes,
-  state,
-} = oauthAuthorizationUrl({
-  clientType: "oauth-app",
-  clientId: "1234567890abcdef1234",
-  redirectUrl: "https://example.com",
-  login: "octocat",
-  scopes: ["repo", "admin:org"],
-  state: "secret123",
-});
+const { url, clientId, redirectUrl, login, scopes, state } =
+  oauthAuthorizationUrl({
+    clientType: "oauth-app",
+    clientId: "1234567890abcdef1234",
+    redirectUrl: "https://example.com",
+    login: "octocat",
+    scopes: ["repo", "admin:org"],
+    state: "secret123",
+  });
 ```
 
 ### For GitHub Apps
