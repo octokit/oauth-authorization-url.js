@@ -3,7 +3,7 @@
 > Universal library to retrieve GitHub’s identity URL for the OAuth web flow
 
 [![@latest](https://img.shields.io/npm/v/@octokit/oauth-authorization-url.svg)](https://www.npmjs.com/package/@octokit/oauth-authorization-url)
-[![Build Status](https://github.com/octokit/oauth-authorization-url.js/workflows/Test/badge.svg)](https://github.com/octokit/oauth-authorization-url.js/actions?query=workflow%3ATest+branch%3Amaster)
+[![Build Status](https://github.com/octokit/oauth-authorization-url.js/workflows/Test/badge.svg)](https://github.com/octokit/oauth-authorization-url.js/actions?query=workflow%3ATest+branch%3Amain)
 
 See [GitHub’s Developer Guide for the OAuth App web application flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow). Note that the [OAuth web application flow for GitHub Apps](https://docs.github.com/en/developers/apps/identifying-and-authorizing-users-for-github-apps#web-application-flow) is slightly different. GitHub Apps do not support scopes for its user access tokens (they are called user-to-server tokens for GitHub Apps), instead they inherit the user permissions from the GitHub App's registration and the repository/organization access and permissions from the respective installation.
 
@@ -28,7 +28,7 @@ See [GitHub’s Developer Guide for the OAuth App web application flow](https://
         Browsers
       </th>
       <td width=100%>
-  
+
 Load `@octokit/oauth-authorization-url` directly from [cdn.skypack.dev](https://cdn.skypack.dev)
 
 ```html
@@ -157,7 +157,7 @@ Defaults to `[]` if `clientType` is set to `"oauth-app"`.
         <code>allowSignup</code>
       </th>
       <td>
-        Whether or not unauthenticated users will be offered an option to sign up for GitHub during the OAuth flow. Use <code>false</code> in the case that a policy prohibits signups. Defaults to <code>true</code>. 
+        Whether or not unauthenticated users will be offered an option to sign up for GitHub during the OAuth flow. Use <code>false</code> in the case that a policy prohibits signups. Defaults to <code>true</code>.
       </td>
     </tr>
     <tr>
