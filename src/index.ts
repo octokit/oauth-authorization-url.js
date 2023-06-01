@@ -1,11 +1,10 @@
-import {
-  ClientType,
+import type {
   OAuthAppOptions,
   GitHubAppOptions,
   OAuthAppResult,
   GitHubAppResult,
 } from "./types";
-export {
+export type {
   ClientType,
   OAuthAppOptions,
   GitHubAppOptions,
