@@ -79,6 +79,7 @@ async function main() {
         types: "dist-types/index.d.ts",
         module: "dist-src/index.js",
         sideEffects: false,
+        unpkg: "dist-web/index.js"
       },
       null,
       2
