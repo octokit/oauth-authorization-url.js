@@ -1,5 +1,4 @@
 import {
-  ClientType,
   OAuthAppOptions,
   GitHubAppOptions,
   OAuthAppResult,
