@@ -4,7 +4,7 @@ import type {
   OAuthAppResult,
   GitHubAppResult,
 } from "./types";
-export {
+export type {
   ClientType,
   OAuthAppOptions,
   GitHubAppOptions,
