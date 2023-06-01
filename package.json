@@ -29,7 +29,6 @@
     "esbuild": "^0.17.19",
     "glob": "^10.2.6",
     "jest": "^29.0.0",
-    "pika-plugin-unpkg-field": "^1.0.1",
     "prettier": "2.8.8",
     "ts-jest": "^29.0.0",
     "typescript": "^5.0.0"
