@@ -24,7 +24,7 @@
   "author": "Gregor Martynus (https://github.com/gr2m)",
   "license": "MIT",
   "devDependencies": {
-    "@octokit/tsconfig": "^1.0.2",
+    "@octokit/tsconfig": "^2.0.0",
     "@types/jest": "^29.0.0",
     "esbuild": "^0.17.19",
     "glob": "^10.2.6",
