@@ -8,7 +8,7 @@ test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234"})', () => {
   expect(
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
@@ -25,7 +25,7 @@ test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234", clientType: "oaut
   expect(
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
@@ -43,7 +43,7 @@ test('oauthAuthorizationUrl({clientId: "lv1.1234567890abcdef", clientType: "gith
     oauthAuthorizationUrl({
       clientId: "lv1.1234567890abcdef",
       clientType: "github-app",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "lv1.1234567890abcdef",
@@ -59,7 +59,7 @@ test('oauthAuthorizationUrl({clientId: "4321fedcba0987654321"})', () => {
   expect(
     oauthAuthorizationUrl({
       clientId: "4321fedcba0987654321",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "4321fedcba0987654321",
@@ -77,7 +77,7 @@ test("redirectUrl option", () => {
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
       redirectUrl: "https://example.com?q=octocat&sort=date",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
@@ -95,7 +95,7 @@ test("login option", () => {
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
       login: "octocat",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
@@ -114,7 +114,7 @@ test("scopes = []", () => {
       clientId: "1234567890abcdef1234",
       login: "octocat",
       scopes: [],
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
@@ -133,7 +133,7 @@ test('scopes = ""', () => {
       clientId: "1234567890abcdef1234",
       login: "octocat",
       scopes: "",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
@@ -152,7 +152,7 @@ test('scopes = "user,public_repo, gist notifications"', () => {
       clientId: "1234567890abcdef1234",
       login: "octocat",
       scopes: "user,public_repo, gist notifications",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
@@ -172,7 +172,7 @@ test("allowSignup = false", () => {
       clientId: "1234567890abcdef1234",
       login: "octocat",
       scopes: "user,public_repo, gist notifications",
-    })
+    }),
   ).toEqual({
     allowSignup: false,
     clientId: "1234567890abcdef1234",
@@ -191,7 +191,7 @@ test("state = Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI", () => {
       clientId: "1234567890abcdef1234",
       login: "octocat",
       state: "Sjn2oMwNFZPiVm6Mtjn2o9b3xxZ4sVEI",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",
@@ -209,7 +209,7 @@ test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234", baseUrl: "https:/
     oauthAuthorizationUrl({
       clientId: "1234567890abcdef1234",
       baseUrl: "https://github.my-enterprise.com",
-    })
+    }),
   ).toEqual({
     allowSignup: true,
     clientId: "1234567890abcdef1234",

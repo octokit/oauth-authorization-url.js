@@ -14,11 +14,11 @@ export type {
 
 export function oauthAuthorizationUrl(options: OAuthAppOptions): OAuthAppResult;
 export function oauthAuthorizationUrl(
-  options: GitHubAppOptions
+  options: GitHubAppOptions,
 ): GitHubAppResult;
 
 export function oauthAuthorizationUrl(
-  options: Record<string, unknown>
+  options: Record<string, unknown>,
 ): Record<string, unknown> {
   const clientType = options.clientType || "oauth-app";
   const baseUrl = options.baseUrl || "https://github.com";
@@ -47,7 +47,7 @@ export function oauthAuthorizationUrl(
 
 function urlBuilderAuthorize(
   base: string,
-  options: Record<string, unknown>
+  options: Record<string, unknown>,
 ): string {
   const map = {
     allowSignup: "allow_signup",
