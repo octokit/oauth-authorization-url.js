@@ -1,4 +1,5 @@
-import { oauthAuthorizationUrl } from "../src/index";
+import { oauthAuthorizationUrl } from "../src/index.js";
+import { jest } from "@jest/globals";
 
 beforeAll(() => {
   Math.random = jest.fn(() => 0.123);
