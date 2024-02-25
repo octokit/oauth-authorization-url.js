@@ -3,14 +3,14 @@ import type {
   GitHubAppOptions,
   OAuthAppResult,
   GitHubAppResult,
-} from "./types";
+} from "./types.js";
 export type {
   ClientType,
   OAuthAppOptions,
   GitHubAppOptions,
   OAuthAppResult,
   GitHubAppResult,
-} from "./types";
+} from "./types.js";
 
 export function oauthAuthorizationUrl(options: OAuthAppOptions): OAuthAppResult;
 export function oauthAuthorizationUrl(
