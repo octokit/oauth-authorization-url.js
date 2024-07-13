@@ -1,8 +1,8 @@
+import { test, expect, beforeAll, vi } from "vitest";
 import { oauthAuthorizationUrl } from "../src/index.js";
-import { jest } from "@jest/globals";
 
 beforeAll(() => {
-  Math.random = jest.fn(() => 0.123);
+  Math.random = vi.fn(() => 0.123);
 });
 
 test('oauthAuthorizationUrl({clientId: "1234567890abcdef1234"})', () => {
