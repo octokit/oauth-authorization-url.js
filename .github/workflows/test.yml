@@ -31,5 +31,12 @@ jobs:
     steps:
       - run: exit 1
         if: ${{ needs.test_matrix.result != 'success' }}
-      - run: echo "Tests execution finished successfully! ✅"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
     if: ${{ always() }}
