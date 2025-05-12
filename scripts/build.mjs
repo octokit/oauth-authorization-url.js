@@ -62,11 +62,11 @@ async function main() {
           },
         },
         sideEffects: false,
-        unpkg: "dist-src/index.js"
+        unpkg: "dist-src/index.js",
       },
       null,
-      2
-    )
+      2,
+    ),
   );
 }
 main();
