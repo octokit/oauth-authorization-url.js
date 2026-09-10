@@ -27,7 +27,7 @@
   "license": "MIT",
   "devDependencies": {
     "@octokit/tsconfig": "^4.0.0",
-    "@vitest/coverage-v8": "^4.0.0",
+    "@vitest/coverage-v8": "^5.0.0",
     "esbuild": "^0.28.0",
     "prettier": "3.7.4",
     "tinyglobby": "^0.2.15",
